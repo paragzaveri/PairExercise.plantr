@@ -1,10 +1,15 @@
-const {db} = require('./model');
+const { db } = require('./model');
 
+// Create Seed Data
 
-  db.sync({force: true}).then(() => {
+// Sync Database after Seeding
+db.sync({ force: true })
+  .then(() => {
     console.log('db synced');
-  }).catch(() => {
+  })
+  .catch(() => {
     console.log('disaster');
-  }).finally(() => {
+  })
+  .finally(() => {
     db.close();
   });
